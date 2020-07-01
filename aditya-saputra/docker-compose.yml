@@ -1,0 +1,16 @@
+version: "2"
+services:
+  app:
+    build: .
+    ports:
+    - "8080:8080"
+    depends_on:
+    - mongo
+    - redis
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
+  redis:
+    image: redis
+          

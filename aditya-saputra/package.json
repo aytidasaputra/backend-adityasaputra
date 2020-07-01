@@ -1,0 +1,26 @@
+{
+  "name": "aditya-saputra",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "start-dev": "nodemon ./bin/wwww"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.5.9",
+    "mongoose": "^5.9.20",
+    "mongoose-type-email": "^1.0.12",
+    "morgan": "~1.9.1",
+    "notenv": "^2.0.3",
+    "redis": "^3.0.2",
+    "util": "^0.12.3",
+    "validator": "^13.1.1"
+  }
+}
