@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const Users = require('../models/users')
+const Users = require('../models/users');
+const { log } = require('util');
 
 async function getUsers(req, res, next) {
   let user;
@@ -29,13 +30,22 @@ router.get('/:id', getUsers, (req, res) => {
   res.json(res.user)
 })
 
-router.get('/:accountNumber', async (req, res) => {
-  try {
-    const user = new Users.find(accountNumber)
-    res.json(user)
-  } catch (err) {
-    res.status(500).json({ message: err.message })
-  }
+router.get('/accountNumber/:accountNumber', (req, res) => {
+  Users.find({ accountNumber: req.params.accountNumber }, function (
+    err, users
+  ){
+    if (err) return res.send(err);
+    res.json(users);
+  })
+})
+
+router.get('/identityNumber/:identityNumber', (req, res) => {
+  Users.find({ identityNumber: req.params.identityNumber }, function (
+    err, users
+  ){
+    if (err) return res.send(err);
+    res.json(users);
+  })
 })
 
 router.post('/users/login', async(req, res) => {
