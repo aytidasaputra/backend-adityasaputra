@@ -19,7 +19,7 @@
     "mongoose-type-email": "^1.0.12",
     "morgan": "~1.9.1",
     "notenv": "^2.0.3",
-    "redis": "^3.0.2",
+    "redis": "^3.1.1",
     "util": "^0.12.3",
     "validator": "^13.1.1"
   }
